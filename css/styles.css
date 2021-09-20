@@ -1,0 +1,51 @@
+body {
+    background-color: #0c0e0f;
+    color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #ee293d;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer a,
+footer a:hover,
+footer a:active {
+    color: #fff;
+}
+
+.container-fluid.max-width {
+    max-width: 1150px;
+}
+
+.logo {
+    background-image: url('../images/space-oddity.svg');
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 62px;
+    margin: 1.25rem 0;
+}
+
+.languages {
+    margin: 1.25rem 0;
+}
+
+.carousel-caption {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.25rem;
+    text-shadow: 0 0 10px #000;
+}
