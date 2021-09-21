@@ -1,10 +1,67 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-regular.woff2') format('woff2'), 
+         url('fonts/roboto-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-bold.woff2') format('woff2'), 
+         url('fonts/roboto-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-italic.woff2') format('woff2'), 
+         url('fonts/roboto-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-bolditalic.woff2') format('woff2'), 
+         url('fonts/roboto-bolditalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/oswald-regular.woff2') format('woff2'), 
+         url('fonts/oswald-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --bs-blue: #1a5dad;
+    --bs-primary: #1a5dad;
+    --bs-primary-rgb: 26,94,173;
+}
+
 body {
     background-color: #0c0e0f;
     color: #fff;
+    font-family: Roboto, sans-serif;
+}
+
+body.menu-open {
+    overflow-y: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
     color: #ee293d;
+    font-family: Oswald, sans-serif;
+    font-weight: normal;
+}
+
+h2,h3 {
+    text-transform: uppercase;
 }
 
 img {
@@ -13,6 +70,7 @@ img {
 }
 
 a {
+    color: #1a5dad;
     text-decoration: none;
 }
 
@@ -30,22 +88,152 @@ footer a:active {
     max-width: 1150px;
 }
 
+.btn {
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary,
+.btn-group .btn-primary.active {
+    background-color: #1a5dad;
+    border-color: #1a5dad;
+}
+
+.btn-group .btn:not(.active) {
+    opacity: .5;
+}
+
+.btn,
+.form-control {
+    padding: .5rem .75rem;
+    border-radius: 0;
+}
+
 .logo {
     background-image: url('../images/space-oddity.svg');
     background-repeat: no-repeat;
-    width: 350px;
-    height: 62px;
+    width: 200px;
+    height: 35px;
     margin: 1.25rem 0;
 }
 
 .languages {
-    margin: 1.25rem 0;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: left .5s;
+    z-index: 9999;
+}
+
+body.menu-open .languages {
+    left: 0;
+}
+
+.languages .btn {
+    font-family: Roboto, sans-serif;
+    font-size: 2.25rem;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    z-index: 9990;
+    transition: left .5s;
+}
+
+body.menu-open .navbar {
+    left: 0;
+}
+
+.navbar-nav .nav-link {
+    font-family: Oswald, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: none;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.carousel-img {
+    background-size: cover;
+    background-position: center;
+    padding-top: 100%;
 }
 
 .carousel-caption {
     bottom: auto;
     top: 50%;
     transform: translateY(-50%);
+    font-family: Oswald, sans-serif;
     font-size: 2.25rem;
+    line-height: 1.25;
     text-shadow: 0 0 10px #000;
+}
+
+.read-more::after {
+    content: '\203A';
+    margin-left: .5rem;
+}
+
+/*.carousel-control-prev-icon {
+    background-image: url('../images/icon-chevron-left.svg');
+}*/
+
+#menuBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+@media (min-width: 576px) {
+    .carousel-img {
+        padding-top: 56.25%;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        width: 350px;
+        height: 62px;
+    }
+    .languages {
+        position: static;
+        margin: 1.25rem 0;
+    }
+    .languages .btn {
+        font-size: 1rem;
+    }
+    .navbar {
+        position: relative;
+        left: 0;
+    }
+    .navbar-nav .nav-link {
+        font-size: 1.125rem;
+    }
+    .carousel-img {
+        padding-top: 40%;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-img {
+        padding-top: 25%;
+    }
 }
