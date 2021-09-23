@@ -116,22 +116,6 @@ footer a:active {
     text-decoration: none;
 }
 
-.btn-primary,
-.btn-group .btn-primary.active {
-    background-color: #1a5dad;
-    border-color: #1a5dad;
-}
-
-.btn-group .btn:not(.active) {
-    opacity: .5;
-}
-
-.btn,
-.form-control {
-    padding: .5rem .75rem;
-    border-radius: 0;
-}
-
 .logo {
     background-image: url('../images/space-oddity.svg');
     background-repeat: no-repeat;
@@ -209,10 +193,6 @@ body.menu-open .navbar {
     content: '\203A';
     margin-left: .5rem;
 }
-
-/*.carousel-control-prev-icon {
-    background-image: url('../images/icon-chevron-left.svg');
-}*/
 
 #menuBtn {
     position: absolute;

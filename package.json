@@ -1,0 +1,16 @@
+{
+  "name": "space-oddity-2021-09-21",
+  "version": "1.0.0",
+  "description": "Just testing Bootstrap and Sass",
+  "main": "index.html",
+  "scripts": {
+    "start": "sass --watch scss/bootstrap-my-theme.scss css/bootstrap-my-theme.min.css --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Davitt Barry",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bootstrap": "^5.1.1",
+    "sass": "^1.42.1"
+  }
+}

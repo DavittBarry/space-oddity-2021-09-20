@@ -1,0 +1,38 @@
+// bootstrap variable overrides first
+$enable-rounded: false;
+
+$body-bg: #0c0e0f;
+$body-color: #fff;
+
+$blue: #1a5dad;
+
+$font-family-sans-serif: Roboto, sans-serif;
+$headings-font-family: Oswald, sans-serif;
+$headings-font-weight: normal;
+$headings-color: #ee293d;
+
+$input-btn-padding-y: .5rem;
+$input-bg: #fff;
+$input-color: #333;
+$input-border-color: #fff;
+
+$btn-font-family: Oswald, sans-serif;
+
+// Import Bootstrap scss
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Additional customications which need BS variable values
+
+.btn-group .btn-primary.active {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.btn-group .btn:not(.active) {
+    opacity: .5;
+}
+
+// Import our own static stylesheet
+// Do not use file extension or the file will be included with a standard css import rule
+
+@import '../css/styles';
