@@ -38,15 +38,34 @@
     font-style: normal;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0c0e0f;
+    z-index: 9999;
+    transition: top .5s;
+}
+
+header nav.show {
+    left: 0;
+}
+
+header.hide {
+    top: -77px;
+}
+
 :root {
     --bs-blue: #1a5dad;
     --bs-primary: #1a5dad;
     --bs-primary-rgb: 26,94,173;
 }
 
+
 body {
     background-color: #0c0e0f;
-    color: #fff;
+    color: #fff;    
     font-family: Roboto, sans-serif;
 }
 
@@ -197,18 +216,96 @@ body.menu-open .navbar {
 
 #menuBtn {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: transparent;
+    padding: 0;
+    border: none;
     z-index: 9999;
 }
 
+#menuBtn .menu-btn-bar {
+    position: absolute;
+    left: 0;
+    display: block;
+    background-color: #1a5dad;
+    width: 100%;
+    height: 6px;
+    border-radius: .125rem;
+    transition: opacity .25s, top .25s, bottom .25s, transform .25s, background-color .25s;
+}
+
+#menuBtn .menu-btn-bar:first-child {
+    top: 2px;
+}
+
+
+
+#menuBtn .menu-btn-bar:nth-child(2),
+#menuBtn .menu-btn-bar:nth-child(3) {
+    top: 50%;
+    margin-top: -3px;
+}
+#menuBtn .menu-btn-bar:last-child {
+    bottom: 2px;
+}
+
+body.menu-open #menuBtn .menu-btn-bar:first-child {
+    top: -6px;
+    opacity: 0;
+}
+
+body.menu-open #menuBtn .menu-btn-bar:last-child {
+    bottom: -6px;
+    opacity: 0;
+}
+
+body.menu-open #menuBtn .menu-btn-bar:nth-child(2) {
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
+    background-color: #fff;
+    transform: rotate(-45deg);
+}
+
+@media (min-width: 320px) {
+    body {
+        padding-top: 77px;
+    }
+
+    .logo {
+        max-width: 240px;
+    }
+}
+
 @media (min-width: 576px) {
+    body {
+        padding-top: 77px;
+    }
     .carousel-img {
         padding-top: 56.25%;
     }
 }
 
 @media (min-width: 768px) {
+    body {
+        padding-top: 146px;
+    }
+    header.condensed {
+        top: -96px;
+    }
+
+    header.hide {
+        top: -200.2px;
+        transition: top .5s;
+    }
+
+    header nav {
+        position: static;
+    }
     .logo {
         width: 350px;
         height: 62px;
@@ -237,3 +334,4 @@ body.menu-open .navbar {
         padding-top: 25%;
     }
 }
+
